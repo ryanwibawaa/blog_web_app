@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+<div class="wrapper">
+  <form class="edit_form" action="edit_successful/<%= index %>" method="POST">
+    <input type="text" name="title" id="title" value="<%= blogPost.title %>" />
+    <textarea
+      name="content"
+      id="content"
+      rows="12"
+      placeholder="New blog content incoming!"
+      maxlength="250"
+    >
+<%= blogPost.content %></textarea
+    >
+    <button type="submit" name="edit">save</button>
+  </form>
+</div>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,76 @@
+:root {
+  --main: 65, 72, 104;
+  --dark_grey: #1f2335;
+  --light_grey: #24283b;
+  --text: #cfc9c2;
+  --title: #c0caf5;
+  --blog_content: #a9b1d6;
+}
+
+.wrapper {
+  height: 84vh;
+  background-color: var(--light_grey);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.edit_form {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2vh;
+  background-color: rgba(var(--main), 0.2);
+  margin: 2vh 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.edit_form input {
+  background-color: var(--dark_grey);
+  width: 100%;
+  color: var(--text);
+  box-sizing: border-box;
+  padding: 1vh;
+  font-size: 20px;
+  border: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.edit_form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1vh;
+  resize: none;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  background-color: var(--dark_grey);
+  border: 0;
+  color: var(--text);
+}
+
+.edit_form textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+.edit_form textarea::-webkit-scrollbar-track {
+  background: #7aa2f7;
+}
+
+.edit_form textarea::-webkit-scrollbar-thumb {
+  background: var(--dark_grey);
+}
+
+.edit_form button {
+  width: 7rem;
+  color: var(--text);
+  background-color: var(--dark_grey);
+  border: 3px solid var(--dark_grey);
+  border-radius: 25px;
+  font-size: 24px;
+  padding: 1vh;
+  align-self: flex-end;
+  font-style: italic;
+  font-family: "Courier New", Courier, monospace;
+}

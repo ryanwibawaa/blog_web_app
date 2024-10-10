@@ -1,0 +1,54 @@
+<%- include("partials/header.ejs") %>
+
+<section>
+  <aside>
+    <h2>No. of Blog Posted:</h2>
+    <h2><%= blogPost.length %></h2>
+  </aside>
+
+  <form class="newBlog" action="/new_entry" method="post">
+    <input type="text" name="title" id="title" placeholder="Blog Title..." />
+    <textarea
+      name="blog_content"
+      id="blog-content"
+      rows="3"
+      placeholder="New blog content incoming!"
+      maxlength="250"
+    ></textarea>
+
+    <input class="action-input" id="post" type="submit" value="create" />
+  </form>
+  <main>
+    <% for (var i = blogPost.length-1; i>=0; i--){ %>
+    <article>
+      <form action="/edit" method="post">
+        <h3 id="title<%= i %>"><%= blogPost[i].title %></h3>
+        <hr />
+        <p id="content<%=i%>"><%= blogPost[i].content %></p>
+        <div class="button_blog">
+          <button
+            class="action-input"
+            id="edit"
+            type="submit"
+            formaction="/edit_blog/<%= i %>"
+            value="<%= i %>"
+          >
+            edit
+          </button>
+          <button
+            class="action-input"
+            id="delete"
+            type="submit"
+            formaction="/delete_blog/<%= i %>"
+            value="<%= i %>"
+          >
+            delete
+          </button>
+        </div>
+      </form>
+    </article>
+    <% } %>
+  </main>
+</section>
+
+<%- include("partials/footer.ejs") %>
