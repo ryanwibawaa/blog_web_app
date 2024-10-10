@@ -26,7 +26,6 @@ app.get("/", (req, res) => {
 
 // add new entry
 app.post("/new_entry", (req, res) => {
-  console.log(req.body);
   blogPost.push({ title: req.body.title, content: req.body.blog_content });
   res.redirect("/");
 });
